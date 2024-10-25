@@ -40,6 +40,16 @@ dbConnect();
 
 const coffeeCollection = client.db("coffeeDB").collection("coffee");
 
+//! for words collection
+const words = client.db("coffeeDB").collection("words");
+
+//! for words collection
+app.get("/words", async (req, res) => {
+  const cursor = words.find();
+  const result = await cursor.toArray();
+  res.send(result);
+});
+
 app.get("/coffee", async (req, res) => {
   const cursor = coffeeCollection.find();
   const result = await cursor.toArray();
