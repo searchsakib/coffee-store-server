@@ -44,7 +44,7 @@ const coffeeCollection = client.db("coffeeDB").collection("coffee");
 const words = client.db("coffeeDB").collection("words");
 
 //! for words collection
-app.get("/words", async (req, res) => {
+app.get("/words/words", async (req, res) => {
   const cursor = words.find();
   const result = await cursor.toArray();
   res.send(result);
