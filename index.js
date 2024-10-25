@@ -30,7 +30,7 @@ const client = new MongoClient(uri, {
 
 const dbConnect = async () => {
   try {
-    await client.connect();
+    // await client.connect();
     console.log("Database Connected!");
   } catch (error) {
     console.log(error.name, error.message);
@@ -89,8 +89,8 @@ app.delete("/coffee/:id", async (req, res) => {
 });
 
 // Send a ping to confirm a successful connection
-await client.db("admin").command({ ping: 1 });
-console.log("Pinged your deployment. You successfully connected to MongoDB!");
+// await client.db("admin").command({ ping: 1 });
+// console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
 app.get("/", (req, res) => {
   res.send("Coffee making server is running!");
