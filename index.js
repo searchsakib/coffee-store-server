@@ -34,8 +34,6 @@ const dbConnect = async () => {
 };
 dbConnect();
 
-const coffeeCollection = client.db("coffeeDB").collection("coffee");
-
 //! for words collection
 const words = client.db("coffeeDB").collection("words");
 
